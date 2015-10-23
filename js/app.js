@@ -8,6 +8,10 @@ $(document).ready(function() {
         loadInstagrams();
     });
 
+    $("#submit").on('click', function() {
+        loadInstagrams();
+    });
+
     var min='',
     url='',
     // Client information
@@ -18,7 +22,6 @@ $(document).ready(function() {
     //Get pictures
     function loadInstagrams() {                      
         $('.loading').removeClass('hidden');
-        $('#backgroundimage').addClass('hidden');
         tag = $('input').val();
         $.ajax({
             type: "GET",
@@ -49,7 +52,6 @@ $(document).ready(function() {
      //Clear pictures and start new search
      $('#clearall').on('click', function() {         
         $('#output').empty();
-        $('#backgroundimage').removeClass('hidden');
         $('.controlbutton').addClass('hidden');
         $('input').val('');
         $('input').focus();
