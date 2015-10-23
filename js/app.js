@@ -3,6 +3,11 @@
 
 $(document).ready(function() {
 
+    $("#search").submit(function (event) {
+        event.preventDefault();
+        loadInstagrams();
+    });
+
     var min='',
     url='',
     // Client information
@@ -53,10 +58,5 @@ $(document).ready(function() {
     $('input').on('click focusin', function() {      
         this.value = '';
     });
-    //Submit input after time delay
-    var timerid;                                     
-    $('input').keyup(function() {
-        clearTimeout(timerid);
-        timerid = setTimeout(function() { loadInstagrams(); }, 500);
-    });
+    
 });
